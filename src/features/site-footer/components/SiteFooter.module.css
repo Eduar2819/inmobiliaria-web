@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-6);
+  padding: 40px var(--page-x) 48px;
+  background: var(--color-surface-footer);
+  color: var(--color-text-inverse-secondary);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  font-size: var(--text-xs);
+}
+
+.link {
+  color: var(--color-text-inverse);
+  text-decoration: underline;
+  text-decoration-color: var(--color-underline-inverse);
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--duration-base) var(--ease-out);
+}
+.link:hover {
+  text-decoration-color: var(--color-accent);
+}

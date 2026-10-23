@@ -1,0 +1,121 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  white-space: nowrap;
+  text-align: center;
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+.button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.sm {
+  padding: 11px 18px;
+  font-size: var(--text-xs);
+}
+.md {
+  padding: 15px 22px;
+  font-size: var(--text-md);
+}
+.lg {
+  min-height: 64px;
+  padding: 17px 28px;
+  font-size: var(--text-md);
+}
+
+.block {
+  display: flex;
+  width: 100%;
+}
+
+/* Ink → ember on hover: ink on ember keeps 5.67:1. */
+.primary {
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+}
+.primary:hover {
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+}
+
+.accent {
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+}
+.accent:hover {
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+}
+
+.outline {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
+}
+.outline:hover {
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+}
+/* On a bronze surface the outline button follows that surface's text colour. */
+[data-surface='accent'] .outline {
+  color: var(--color-text-on-accent);
+  border-color: currentColor;
+}
+[data-surface='accent'] .outline:hover {
+  background: var(--color-text-on-accent);
+  color: var(--color-text-inverse);
+  border-color: var(--color-text-on-accent);
+}
+
+.inverse {
+  background: var(--color-text-inverse);
+  color: var(--color-text);
+}
+.inverse:hover {
+  background: var(--color-accent);
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.dot-accent {
+  background: var(--color-accent);
+}
+.dot-whatsapp {
+  width: 10px;
+  height: 10px;
+  background: var(--color-whatsapp);
+  box-shadow: 0 0 0 1.5px var(--color-on-whatsapp);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.button:hover .arrow {
+  transform: translateX(4px);
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+}
+.icon > svg {
+  width: 1.15em;
+  height: 1.15em;
+}

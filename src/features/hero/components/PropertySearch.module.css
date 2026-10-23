@@ -1,0 +1,69 @@
+/* Tabs sit on the hero's dark veil; the fields share one light bar below them. */
+.search {
+  margin-top: clamp(28px, 3.5vw, 40px);
+  animation: global(tn-fade-up) 1s 0.8s both;
+}
+
+.tabs {
+  margin-bottom: var(--space-3);
+}
+.tabs button:not([aria-pressed='true']) {
+  color: var(--color-text-inverse);
+}
+.tabs button:hover:not([aria-pressed='true']) {
+  background: rgb(230 232 227 / 0.12);
+}
+
+.row {
+  display: flex;
+  align-items: stretch;
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: 0 24px 48px -28px rgb(0 0 0 / 0.55);
+}
+
+.field {
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: var(--radius-pill); /* hover tint follows the pill bar */
+}
+/* Hairline dividers between fields, inset so they don't touch the bar's edges. */
+.field + .field::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 22%;
+  bottom: 22%;
+  width: 1px;
+  background: var(--color-border);
+}
+
+.submit {
+  flex: none;
+  min-height: 0;
+  padding-inline: 28px;
+  border-radius: var(--radius-pill);
+}
+
+@media (max-width: 760px) {
+  .row {
+    flex-direction: column;
+    border-radius: var(--radius-xl);
+  }
+  .field {
+    border-radius: var(--radius-md);
+  }
+  .field + .field::before {
+    left: 16px;
+    right: 16px;
+    top: 0;
+    bottom: auto;
+    width: auto;
+    height: 1px;
+  }
+  .submit {
+    min-height: 52px;
+  }
+}

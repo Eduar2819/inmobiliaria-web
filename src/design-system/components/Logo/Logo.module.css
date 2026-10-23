@@ -1,0 +1,31 @@
+.inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.monogram {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-surface-inverse);
+}
+
+.wordmark {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wordmark);
+  color: var(--color-text);
+}
+
+/* bronze-600 (4.81:1 on cream) instead of the logo's bronze-500 (3.17:1). */
+.nova {
+  color: var(--color-text-brand);
+}
+
+.lockup {
+  width: 180px;
+  height: 120px;
+  object-fit: contain;
+}

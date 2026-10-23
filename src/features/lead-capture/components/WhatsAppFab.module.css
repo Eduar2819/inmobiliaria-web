@@ -1,0 +1,41 @@
+.fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: var(--z-fab);
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-whatsapp);
+  color: var(--color-on-whatsapp);
+  box-shadow: var(--shadow-fab);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    opacity var(--duration-base) var(--ease-out);
+}
+.fab:hover {
+  transform: scale(1.08);
+}
+
+.pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--color-whatsapp);
+  /* A few pulses to get noticed, then it rests: a perpetual loop next to reading content is noise. */
+  animation: global(tn-pulse) 2.2s 1.5s 3 both;
+}
+
+.icon {
+  position: relative;
+  width: 28px;
+  height: 28px;
+}
+
+.hidden {
+  opacity: 0;
+  transform: scale(0.6);
+  pointer-events: none;
+}

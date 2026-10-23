@@ -1,0 +1,198 @@
+/*
+ * Terranova design tokens.
+ *
+ * Layer 1 (primitives): raw brand values, named after where they come from.
+ * Layer 2 (semantic):   what a value is FOR. Components use only these.
+ *
+ * Palette: the logo's own colours. Pino is its green pushed to a committed hue,
+ * concreto is cool site-grey instead of cream, and bronce (the "NOVA" in the
+ * wordmark) is the single accent.
+ *
+ * Contrast notes (WCAG 2.2, measured against the surface they sit on):
+ *   pino-950 on concreto-100 ....... 13.2:1  AAA
+ *   pino-950 on concreto-50 ........ 14.9:1  AAA
+ *   liquen-600 on concreto-100 ...... 5.71:1 AA
+ *   liquen-500 on concreto-100 ...... 4.97:1 AA
+ *   bronce-600 on concreto-100 ...... 4.54:1 AA  → wordmark “NOVA” on light
+ *   bronce-700 on concreto-100 ...... 6.03:1 AA  → accent text on light
+ *   pino-950 on bronce-300 .......... 8.42:1 AAA → text on accent fills (white would be 1.94:1)
+ *   bronce-300 on pino-800 .......... 7.26:1 AAA → accent text on dark
+ *   concreto-100 on pino-800 ....... 11.4:1  AAA
+ *   white on whatsapp ............... 3.52:1 ≥ 3:1 for icons (brand #25d366 would be 1.98:1)
+ */
+:root {
+  /* ── Primitives ─────────────────────────────────────────── */
+  --tn-pino-950: #13231f; /* text */
+  --tn-pino-900: #122620; /* footer */
+  --tn-pino-800: #183029; /* dark sections */
+  --tn-pino-700: #21403a; /* raised on dark (map) */
+
+  --tn-concreto-50: #f4f5f1;
+  --tn-concreto-100: #e6e8e3;
+  --tn-concreto-200: #dadcd5;
+  --tn-concreto-300: #caccc4;
+
+  --tn-bronce-300: #d6b58c;
+  --tn-bronce-400: #c49a6c;
+  --tn-bronce-500: #a97c50; /* logo, decorative only */
+  --tn-bronce-550: #946b43; /* deep bronze, reserved (white text passes at 4.73:1) */
+  --tn-bronce-600: #86603a;
+  --tn-bronce-700: #6e4f2f;
+
+  --tn-liquen-500: #56655f;
+  --tn-liquen-600: #4d5c56;
+
+  --tn-rojo-700: #a3312a;
+  --tn-white: #ffffff;
+  --tn-whatsapp: #189d4a; /* a deeper WhatsApp green so the white glyph reads */
+
+  /* ── Semantic: surfaces ─────────────────────────────────── */
+  --color-bg: var(--tn-concreto-100);
+  --color-surface: var(--tn-concreto-50);
+  --color-surface-sunken: var(--tn-concreto-100);
+  --color-surface-hover: var(--tn-concreto-200);
+  --color-surface-media: var(--tn-concreto-300);
+  --color-surface-inverse: var(--tn-pino-800);
+  --color-surface-inverse-raised: var(--tn-pino-700);
+  --color-surface-footer: var(--tn-pino-900);
+  --color-surface-accent: var(--tn-bronce-300);
+  --color-scrim-light: rgb(244 245 241 / 0.9);
+  --color-nav-scrolled: rgb(230 232 227 / 0.86);
+
+  /* ── Semantic: text ─────────────────────────────────────── */
+  --color-text: var(--tn-pino-950);
+  --color-text-secondary: var(--tn-liquen-600);
+  --color-text-muted: var(--tn-liquen-500);
+  --color-text-label: var(--tn-liquen-600);
+  --color-text-brand: var(--tn-bronce-600);
+  --color-text-accent: var(--tn-bronce-700);
+  --color-text-display-accent: var(--tn-pino-950);
+  --color-text-on-accent: var(--tn-pino-950);
+  --color-text-danger: var(--tn-rojo-700);
+
+  --color-text-inverse: var(--tn-concreto-100);
+  --color-text-inverse-secondary: rgb(230 232 227 / 0.8);
+  --color-text-inverse-muted: rgb(230 232 227 / 0.66);
+  --color-text-inverse-label: rgb(230 232 227 / 0.8);
+  --color-text-inverse-accent: var(--tn-bronce-300);
+
+  /* ── Semantic: lines & fills ────────────────────────────── */
+  --color-border: rgb(19 35 31 / 0.2);
+  --color-border-subtle: rgb(19 35 31 / 0.08);
+  --color-border-strong: var(--tn-pino-950);
+  /* Field outlines: ≥ 3:1 against concreto-50/100 (WCAG 1.4.11 non-text contrast). */
+  --color-border-field: rgb(19 35 31 / 0.48);
+  --color-border-inverse: rgb(230 232 227 / 0.16);
+  --color-fill-subtle: rgb(19 35 31 / 0.07);
+  --color-fill-hover: rgb(19 35 31 / 0.06);
+  --color-track: rgb(19 35 31 / 0.12);
+  --color-accent: var(--tn-bronce-300); /* same bronze as the hero's accent line */
+  --color-icon-accent: var(--tn-bronce-600); /* icons on light, ≥ 3:1 */
+  --color-icon-inverse-accent: var(--tn-bronce-300);
+  --color-brand: var(--tn-bronce-500);
+  --color-whatsapp: var(--tn-whatsapp);
+  --color-on-whatsapp: var(--tn-white);
+  --color-focus: var(--tn-pino-950);
+  --color-focus-inverse: var(--tn-bronce-300);
+  --color-accent-halo: rgb(214 181 140 / 0.35);
+  --color-hero-scrim: 24 48 41; /* pino-800 as RGB channels for gradient stops */
+  --color-underline-inverse: rgb(230 232 227 / 0.35);
+
+  /* ── Typography ─────────────────────────────────────────── */
+  /*
+   * One family, two widths. Headlines are compressed and heavy like site
+   * hoardings and a plan's title block; running text stays at normal width.
+   */
+  --font-family: 'Archivo Variable', 'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --font-display: var(--font-family);
+  --font-body: var(--font-family);
+  --font-mono: var(--font-family); /* legacy alias: data now uses tabular figures, not a mono face */
+
+  --stretch-display: 88%;
+  --stretch-title: 82%;
+  --stretch-body: 100%;
+
+  /* Scale after Bringhurst's classic ladder: 12 14 16 18 21 24 30 36 48 60 72, then display. */
+  --text-hero: clamp(3.5rem, 8.6vw, 8.75rem); /* 56 → 140 */
+  --text-display-xl: clamp(3rem, 6vw, 5.25rem); /* 48 → 84 */
+  --text-display-lg: clamp(2.25rem, 4.6vw, 4.5rem); /* 36 → 72 */
+  --text-display-md: clamp(2.25rem, 4vw, 3.75rem); /* 36 → 60 */
+  --text-display-sm: clamp(2rem, 3.2vw, 2.875rem); /* 32 → 46: every section title */
+  --text-marquee: clamp(1.5rem, 2.6vw, 2.25rem); /* 24 → 36 */
+  --text-title: 1.875rem; /* 30 */
+  --text-title-sm: 2.25rem; /* 36 */
+  --text-lead: clamp(1.125rem, 1.4vw, 1.3125rem); /* 18 → 21 */
+  --text-lg: 1.125rem; /* 18 */
+  --text-md: 1rem; /* 16 */
+  --text-sm: 0.9375rem; /* 15 */
+  --text-xs: 0.875rem; /* 14 */
+  --text-label: 0.8125rem; /* 13 */
+  --text-label-sm: 0.75rem; /* 12, floor for any readable text */
+
+  --leading-display: 0.92;
+  --leading-tight: 1;
+  --leading-body: 1.55;
+
+  --tracking-display: -0.022em;
+  --tracking-heading: -0.018em;
+  --tracking-label: 0.16em; /* uppercase section labels */
+  --tracking-label-sm: 0.01em;
+  --tracking-wordmark: 0.26em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-display: 640;
+
+  /* ── Space (4px base) ───────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --gutter: clamp(20px, 4vw, 56px);
+  --content-max: 1320px;
+  /* Side padding that also centres content on wide screens: every section lines up on it. */
+  --page-x: max(var(--gutter), calc((100% - var(--content-max)) / 2));
+  --section-y: clamp(64px, 7.5vw, 112px); /* one vertical rhythm for every section */
+  --stats-overlap: clamp(40px, 5vw, 64px); /* how far the stats card rides up over the hero */
+
+  /* ── Radius ─────────────────────────────────────────────── */
+  /*
+   * Rule: everything you press is a pill (buttons, chips, segmented options,
+   * tags); text fields use --radius-md; media and panels step up with size.
+   */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 22px;
+  --radius-section: 28px;
+  --radius-pill: 999px;
+
+  /* ── Elevation (tinted with pino, never neutral black) ──── */
+  --shadow-float: 0 32px 64px -36px rgb(19 35 31 / 0.5), 0 2px 0 rgb(19 35 31 / 0.04);
+  --shadow-float-strong: 0 32px 64px -36px rgb(19 35 31 / 0.55);
+  --shadow-fab: 0 14px 34px -10px rgb(19 35 31 / 0.5);
+
+  /* ── Motion ─────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.7, 0, 0.2, 1);
+  --duration-fast: 250ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --duration-reveal: 1000ms;
+
+  /* ── Layers ─────────────────────────────────────────────── */
+  --z-map: 1;
+  --nav-h: 68px;
+  --z-nav: 50;
+  --z-fab: 60;
+  --z-skip: 100;
+}

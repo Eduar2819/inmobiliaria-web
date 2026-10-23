@@ -1,0 +1,58 @@
+/* Compressed, heavy Archivo: the headline voice of the site. */
+.display {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-stretch: var(--stretch-display);
+  letter-spacing: var(--tracking-heading);
+  line-height: var(--leading-display);
+}
+
+.hero {
+  font-size: var(--text-hero);
+  line-height: 0.88;
+  letter-spacing: var(--tracking-display);
+}
+.xl {
+  font-size: var(--text-display-xl);
+  letter-spacing: var(--tracking-display);
+}
+.lg {
+  font-size: var(--text-display-lg);
+}
+.md {
+  font-size: var(--text-display-md);
+  line-height: var(--leading-tight);
+}
+.sm {
+  font-size: var(--text-display-sm);
+  line-height: var(--leading-tight);
+}
+/* Card and panel titles: less compressed so short names don't look pinched. */
+.title,
+.titleSm {
+  font-stretch: var(--stretch-title);
+  font-weight: var(--weight-bold);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+.title {
+  font-size: var(--text-title);
+}
+.titleSm {
+  font-size: var(--text-title-sm);
+}
+
+.italic {
+  font-style: italic;
+}
+.balance {
+  text-wrap: balance;
+}
+
+.accent {
+  color: var(--color-text-display-accent);
+}
+[data-surface='inverse'] .accent {
+  color: var(--color-text-inverse-accent);
+}

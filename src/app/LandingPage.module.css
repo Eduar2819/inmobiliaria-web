@@ -1,0 +1,9 @@
+.page {
+  min-height: 100dvh;
+  background: var(--color-bg);
+  overflow-x: clip;
+}
+
+.main:focus {
+  outline: none;
+}

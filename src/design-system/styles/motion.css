@@ -1,0 +1,92 @@
+/* Shared keyframes — names are referenced from component CSS modules. */
+@keyframes tn-rise {
+  from {
+    transform: translateY(110%) rotate(3deg);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes tn-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes tn-clip-in {
+  from {
+    clip-path: inset(18% 22% 0 22% round 200px);
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 22px);
+  }
+}
+
+@keyframes tn-ken-burns {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes tn-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes tn-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+@keyframes tn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scroll reveal (driven by useReveal). */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity var(--duration-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+    transform var(--duration-reveal) var(--ease-out) var(--reveal-delay, 0ms);
+}
+[data-reveal='visible'] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect the OS setting: keep layout, drop movement. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

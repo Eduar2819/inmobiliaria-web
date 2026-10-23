@@ -1,0 +1,38 @@
+.section {
+  padding: var(--section-y) var(--page-x) calc(var(--section-y) + 24px);
+  border-radius: var(--radius-section) var(--radius-section) 0 0;
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+}
+
+/* One message per header: headline, then the hint directly beneath it. */
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+
+.sub {
+  max-width: 52ch;
+  font-size: var(--text-lead);
+  line-height: var(--leading-body);
+  color: var(--color-text-inverse-secondary);
+}
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: clamp(24px, 4vw, 64px);
+}
+
+/* Same footprint as the map, so nothing shifts when Leaflet arrives. */
+.mapSkeleton {
+  flex: 1.2 1 420px;
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  max-height: 640px;
+  border-radius: var(--radius-xl);
+  background: var(--color-surface-inverse-raised);
+}

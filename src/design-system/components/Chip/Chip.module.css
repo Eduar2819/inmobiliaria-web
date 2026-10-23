@@ -1,0 +1,23 @@
+.chip {
+  padding: 9px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+.chip:hover {
+  border-color: var(--color-border-strong);
+}
+
+.selected {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+  font-weight: var(--weight-semibold);
+}

@@ -1,0 +1,86 @@
+.band {
+  position: relative;
+  overflow: hidden;
+  padding: 22px 0;
+  background: var(--color-surface-accent);
+  color: var(--color-text-on-accent);
+}
+/* Items slide in and out of a soft edge (painted in the band colour) instead of being cut. */
+.band::before,
+.band::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 6%;
+  pointer-events: none;
+}
+.band::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-surface-accent), transparent);
+}
+.band::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-surface-accent), transparent);
+}
+
+/* Endless loop: the track holds two copies and moves left by one copy (-50%). */
+.track {
+  display: flex;
+  width: max-content;
+  animation: global(tn-marquee) 32s linear infinite;
+  will-change: transform;
+}
+
+.list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-right: 32px;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-stretch: var(--stretch-display);
+  font-size: var(--text-marquee);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.sep {
+  width: 8px;
+  height: 8px;
+  border-radius: 1px;
+  transform: rotate(45deg);
+  background: currentColor;
+  opacity: 0.7;
+}
+
+/* No movement requested: one static, wrapped row. */
+@media (prefers-reduced-motion: reduce) {
+  .band {
+    padding-inline: var(--page-x);
+  }
+  .band::before,
+  .band::after {
+    display: none;
+  }
+  .track {
+    width: auto;
+    animation: none;
+  }
+  .list {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: var(--space-3);
+  }
+  .list + .list {
+    display: none;
+  }
+}

@@ -1,0 +1,45 @@
+.section {
+  padding: 0 var(--page-x) clamp(24px, 3vw, 48px);
+  background: var(--color-surface-inverse);
+}
+
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  padding: clamp(32px, 6vw, 96px) clamp(20px, 5vw, 72px);
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface-accent);
+  color: var(--color-text-on-accent);
+}
+
+.copy {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 18px;
+}
+
+.sub {
+  max-width: 440px;
+  margin-bottom: var(--space-7);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+}
+
+.card {
+  flex: 1 1 380px;
+  min-width: 0;
+  padding: clamp(20px, 3vw, 32px);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-float-strong);
+}
+/* Form lives on a light card inside the ember panel: restore light-surface focus color. */
+.card :focus-visible {
+  outline-color: var(--color-focus);
+}

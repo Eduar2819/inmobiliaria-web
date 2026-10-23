@@ -1,0 +1,107 @@
+.section {
+  padding: var(--section-y) 0;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-6);
+  padding: 0 var(--page-x);
+  margin-bottom: clamp(28px, 3.5vw, 48px);
+}
+
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.rail {
+  display: flex;
+  gap: clamp(14px, 1.6vw, 22px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 8px var(--page-x) 16px;
+  scroll-padding: 0 var(--page-x);
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+.rail:focus-visible {
+  outline-offset: -2px;
+  border-radius: var(--radius-lg);
+}
+
+.zone {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+.zone strong {
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+.clear,
+.emptyLink {
+  padding: 0 0 2px;
+  border: 0;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  color: var(--color-text-accent);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  transition: background-size var(--duration-base) var(--ease-out);
+}
+.clear:hover,
+.emptyLink:hover {
+  background-size: 0 1px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin: 0 var(--page-x);
+  padding: clamp(32px, 5vw, 64px);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  animation: global(tn-fade-up) 0.5s var(--ease-out) both;
+}
+
+.emptySub {
+  max-width: 52ch;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-body);
+}
+
+.emptyActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-2);
+}
+
+.disclaimer {
+  max-width: 72ch;
+  margin: var(--space-2) var(--page-x) 0;
+  font-size: var(--text-label-sm);
+  color: var(--color-text-muted);
+}

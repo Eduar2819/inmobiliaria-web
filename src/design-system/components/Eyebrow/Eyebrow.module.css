@@ -1,0 +1,27 @@
+/* Small tracked capitals that name a section ("Nuestra diferencia"). */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.md {
+  font-size: var(--text-label-sm);
+  letter-spacing: var(--tracking-label);
+}
+.sm,
+.xs {
+  font-size: var(--text-label-sm);
+  letter-spacing: 0.12em;
+}
+
+.default {
+  color: var(--color-text-label);
+}
+.inverse {
+  color: var(--color-text-inverse-secondary);
+}
+.onAccent {
+  color: var(--color-text-on-accent);
+}
